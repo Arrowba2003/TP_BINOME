@@ -3,11 +3,16 @@ def add_expense():
 # Travail de l'etudiant A
 pass
 def show_expenses():
-# Travail de l'etudiant B
-pass
+ef show_expenses():
+if not expenses:
+print("Aucune depense enregistree.")
+return
+for number, expense in enumerate(expenses, start=1):
+    print(f"{number}. {expense['description']} - "
+f"{expense['amount']:.2f}")
 def show_total():
-# Travail de l'etudiant B
-pass
+    total = sum(item["amount"] for item in expenses)
+    print(f"Total : {total:.2f}")
 def main():
 while True:
 print("\n===== SUIVI DES DEPENSES =====")
