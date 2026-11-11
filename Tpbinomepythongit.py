@@ -1,5 +1,12 @@
 expenses = []
 def add_expense():
+description = input("Description : ")
+amount = float(input("Montant : "))
+expenses.append({
+"description": description,
+"amount": amount
+})
+print("Depense ajoutee !")
 # Travail de l'etudiant A
 pass
 def show_expenses():
@@ -19,7 +26,6 @@ choice = input("Votre choix : ")
 if choice == "1":
 add_expense()
 elif choice == "2":
-TP 1 — Git et GitHub | Suivi des dépenses Page 2
 show_expenses()
 elif choice == "3":
 show_total()
