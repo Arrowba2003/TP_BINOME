@@ -1,4 +1,6 @@
+
 expenses = []
+
 
 def add_expense():
     description = input("Description : ")
@@ -9,6 +11,7 @@ def add_expense():
     })
     print("Depense ajoutee !")
 
+
 def show_expenses():
     if not expenses:
         print("Aucune depense enregistree.")
@@ -18,9 +21,11 @@ def show_expenses():
         print(f"{number}. {expense['description']} - "
               f"{expense['amount']:.2f}")
 
+
 def show_total():
     total = sum(item["amount"] for item in expenses)
     print(f"Total : {total:.2f}")
+
 
 def delete_expense():
     if not expenses:
@@ -44,6 +49,17 @@ def delete_expense():
     else:
         print("Invalid expense number.")
 
+
+def show_average():
+    if not expenses:
+        print("No expenses recorded.")
+        return
+
+    total = sum(item["amount"] for item in expenses)
+    average = total / len(expenses)
+    print(f"Average expense: {average:.2f}")
+
+
 def main():
     while True:
         print("\n===== SUIVI DES DEPENSES =====")
@@ -52,6 +68,7 @@ def main():
         print("3. Afficher le total")
         print("4. Quitter")
         print("5. Delete an expense")
+        print("6. Afficher la moyenne des depenses")
 
         choice = input("Votre choix : ")
 
@@ -66,8 +83,11 @@ def main():
             break
         elif choice == "5":
             delete_expense()
+        elif choice == "6":
+            show_average()
         else:
             print("Choix invalide.")
+
 
 if __name__ == "__main__":
     main()
