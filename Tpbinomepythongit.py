@@ -36,7 +36,7 @@ def main():
         print("2. Afficher les depenses")
         print("3. Afficher le total")
         print("4. Quitter")
-
+        print("5. Afficher la moyenne des depenses")
         choice = input("Votre choix : ")
         if choice == "1":
             add_expense()
